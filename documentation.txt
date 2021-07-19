@@ -1,0 +1,52 @@
+Documentation file for C++ Banking API.
+
+
+Account Class - Used as the foundation class. Creating an object with this class will grant it the ability to also open a credit account
+and an investment account. Note: Although the Credit Class and Investment Class are defined separately to the account class, the only 
+point of access to their methods is through calling designated methods from the account class. Thus, this documentation will highlight
+how to use the methods found in the Account class that then call on the methods within the Credit / Investment classes. 
+
+Account Methods:
+
+get_owner - returns a string representing the name of the owner of the account.
+
+get_total - returns an integer representing the total amount of cash in the debit account.
+
+
+
+deposit - takes an integer representing money that is deposited into the account and adds it to the total amount of cash. Returns an 
+integer that represents the total cash in account after deposit is made.
+
+Withdraw - takes an integer representing money that is withdrawn from the account and subtracts total cash amount. Returns integer
+that represents total cash in account after withdraw is made. Returns 0 if trying to withdraw more money than is in account.
+
+
+
+
+
+
+Credit Class - This class holds information such as the owner name, credit limit, and amount due (debts). This class is meant to mimic 
+how an actual credit card works.
+
+Credit Methods (Callable from within Account Class):
+
+activate_credit - this will initialize a credit card with the owner name (as found in the account class) and a designated credit limit 
+which represents the amount of credit that account can use. 
+
+change_credit_limit - changes the credit limit of the account depending on the amount inputted. Returns an integer representing the 
+new credit limit of the account.
+
+use_credit - adds onto the amount due figure. Returns an integer representing the total amount due on the credit account. Returns 0 if
+the added amount will make the account go over the credit limit (effectively cancelling the transaction from happening). 
+
+pay_credit_debt - subtracts from the amount due. Returns an integer showing the amount still due after subtracting the amount just paid.
+
+
+
+get_credit_remaining - returns an integer representing the figure of taking the credit limit and subtracting amount due. Essentially,
+the amount of credit that can still be used before the account is maxed out.
+
+get_amount_due - returns the amount due (needs to be payed off). 
+
+get_credit_limit - returns the credit limit of the account. 
+

@@ -130,3 +130,40 @@ int Credit::get_due() {
 int Credit::get_limit() {
     return credit_limit;
 }
+
+
+
+
+
+
+
+// Investment Account methods
+
+Investing::Investing() {
+    cash_amount = 0;
+}
+
+Investing::~Investing() {
+    std::cout << "Closing Investment Account belonging to " << owner << "\n";
+}
+
+
+// setters
+int Investing::deposit_cash(int amount) {
+    cash_amount += amount;
+    return cash_amount;
+}
+
+int Investing::withdraw_cash(int amount) {
+    if (amount > cash_amount) {
+        return 0;
+    }
+    cash_amount -= amount;
+    return cash_amount;
+}
+
+
+// getters
+int Investing::get_cash_amount() {
+    return cash_amount;
+}

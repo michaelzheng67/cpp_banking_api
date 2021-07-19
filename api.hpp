@@ -24,9 +24,24 @@ class Credit {
         int get_limit();
 };
 
-class Investing {
 
+
+class Investing {
+    std::string owner;
+    int cash_amount;
+
+    public: 
+        Investing();
+        ~Investing();
+
+        // setters
+        int deposit_cash(int amount);
+        int withdraw_cash(int amount);
+        // getters
+        int get_cash_amount();
 };
+
+
 
 class Account {
     std::string owner;
